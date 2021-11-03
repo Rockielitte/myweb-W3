@@ -1,0 +1,74 @@
+/* tablet      */
+@media (max-width: 1023px) and(min-width:740px) {
+}
+
+/* mobile */
+@media (max-width: 739px) {
+  .col-half.form-contact.s-full-width {
+    padding-top: 8px;
+  }
+  button.city-but.js-buy-btn {
+    width: 100%;
+  }
+  .city-destination.s-full-width {
+    padding-bottom: 16 px;
+  }
+  #content .member-image {
+    width: 60%;
+  }
+  .s-full-width {
+    width: 100% !important;
+  }
+  #header {
+    overflow: hidden;
+  }
+  #nav > li {
+    display: block;
+  }
+  .icon.ti-search {
+    display: none;
+  }
+  #menu-icon {
+    display: inline-block;
+    color: #fff;
+    float: right;
+    font-size: 16px;
+    line-height: 46px;
+    padding: 0 20px;
+  }
+  #menu-icon:hover {
+    background-color: #ccc;
+    color: #000;
+  }
+  #menu-icon {
+    background-color: #000;
+    color: #fff;
+  }
+  #nav {
+    display: block;
+  }
+  #nav > li:first-child {
+    display: inline-block;
+  }
+  #menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #nav > li > a {
+    display: block;
+  }
+  #nav .subnav {
+    position: initial;
+  }
+  #nav .subnav li a {
+    background-color: #8d8787;
+    padding: 4px 40px;
+  }
+  #nav .subnav li:hover a {
+    background-color: #ccc;
+  }
+  .modal-container.js-modal-cont {
+    margin: 0 16px;
+  }
+}

@@ -27,6 +27,9 @@ html {
   line-height: 46px;
   padding: 0 20px;
 }
+#menu-icon {
+  display: none;
+}
 .font-white {
   color: white !important;
 }
@@ -107,7 +110,8 @@ html {
 }
 #content .section {
   padding: 64px 16px;
-  max-width: 800px;
+  width: 800px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -127,8 +131,9 @@ html {
 }
 #content .section .section-text {
   text-align: justify;
-  margin: 15px 0;
   line-height: 1.4;
+  margin-top: 15px;
+  margin-bottom: 32px;
 }
 #content .member-list .member-name {
   float: right;
@@ -144,6 +149,7 @@ html {
 #content .member-image {
   width: 154px;
   border-radius: 4px;
+  padding-bottom: 16px;
 }
 #content .clear {
   clear: both;
@@ -334,8 +340,8 @@ modal-help {
 .col-r {
   padding: 10px;
   width: 100%;
-  margin-bottom: 8px;
-  border: 1 px solid #ccc !important;
+  margin-bottom: 7px;
+  border: 1px solid #ccc !important;
 }
 .col-send {
   float: right;

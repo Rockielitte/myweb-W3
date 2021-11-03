@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MY BAND</title>
     <link
       rel="icon"
@@ -10,6 +13,7 @@
     />
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
     <link
       rel="stylesheet"
       href="./assets/fonts/themify-icons/themify-icons.css"
@@ -19,24 +23,27 @@
     <div id="main">
       <div id="header">
         <ul id="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#band">Band</a></li>
-          <li><a href="#tour">Tour</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="nav-special"><a href="#">Home</a></li>
+          <li class="nav-special"><a href="#band">Band</a></li>
+          <li class="nav-special"><a href="#tour">Tour</a></li>
+          <li class="nav-special"><a href="#contact">Contact</a></li>
           <li>
-            <a href="#">
+            <a class="stopdefault" href="#">
               More
               <i class="nav-arrow-down ti-angle-down"></i>
             </a>
             <ul class="subnav">
-              <li><a href="#">Merchandise</a></li>
-              <li><a href="#">Extras</a></li>
-              <li><a href="#">Media</a></li>
+              <li class="nav-special"><a href="#">Merchandise</a></li>
+              <li class="nav-special"><a href="#">Extras</a></li>
+              <li class="nav-special"><a href="#">Media</a></li>
             </ul>
           </li>
         </ul>
         <div id="search-icon">
           <i class="icon ti-search"></i>
+        </div>
+        <div id="menu-icon">
+          <i class="icon ti-menu"></i>
         </div>
       </div>
 
@@ -65,7 +72,7 @@
             ea commodo consequat.
           </p>
           <div class="member-list">
-            <div class="member-name">
+            <div class="member-name s-full-width">
               <p class="name">Name</p>
               <img
                 src="./assets/img/bandmember.jpg"
@@ -73,7 +80,7 @@
                 class="member-image"
               />
             </div>
-            <div class="member-name">
+            <div class="member-name s-full-width">
               <p class="name">Name</p>
               <img
                 src="./assets/img/bandmember.jpg"
@@ -81,7 +88,7 @@
                 class="member-image"
               />
             </div>
-            <div class="member-name">
+            <div class="member-name s-full-width">
               <p class="name">Name</p>
               <img
                 src="./assets/img/bandmember.jpg"
@@ -116,7 +123,7 @@
             </ul>
             <!-- city-des -->
             <div class="city-list">
-              <div class="city-destination">
+              <div class="city-destination s-full-width">
                 <img src="./assets/img/newyork.jpg" class="city-image" alt="" />
                 <div class="city-infor">
                   <h2 class="city-name">New York</h2>
@@ -127,7 +134,7 @@
                   <button class="city-but js-buy-btn">Buy Tickets</button>
                 </div>
               </div>
-              <div class="city-destination">
+              <div class="city-destination s-full-width">
                 <img src="./assets/img/paris.jpg" class="city-image" alt="" />
                 <div class="city-infor">
                   <h2 class="city-name">Paris</h2>
@@ -138,7 +145,7 @@
                   <button class="city-but js-buy-btn">Buy Tickets</button>
                 </div>
               </div>
-              <div class="city-destination">
+              <div class="city-destination s-full-width">
                 <img src="./assets/img/sanfran.jpg" class="city-image" alt="" />
                 <div class="city-infor">
                   <h2 class="city-name">San Francisco</h2>
@@ -160,14 +167,14 @@
           <!-- form contact -->
           <form action="">
             <div class="contact-section row">
-              <div class="col-half infor">
+              <div class="col-half infor s-full-width">
                 <p><i class="ti-location-pin"> Chicago, US</i></p>
                 <p><i class="ti-mobile"> Phone: +00 151515</i></p>
                 <p><i class="ti-email"> Email: mail@mail.com</i></p>
               </div>
-              <div class="col-half form-contact">
+              <div class="col-half form-contact s-full-width">
                 <div class="row">
-                  <div class="col-half">
+                  <div class="col-half s-full-width">
                     <input
                       type="text"
                       placeholder="Name"
@@ -177,7 +184,7 @@
                       class="col-r"
                     />
                   </div>
-                  <div class="col-half">
+                  <div class="col-half s-full-width">
                     <input
                       type="email"
                       placeholder="Email"
@@ -206,7 +213,7 @@
                     name=""
                     id=""
                     value="SEND"
-                    class="col-send"
+                    class="col-send s-full-width"
                   />
                 </div>
               </div>
@@ -288,4 +295,29 @@
     });
     close.addEventListener("click", offbuy);
   </script>
+  <!-- mobile-part -->
+  <script>
+    var header = document.getElementById("header");
+    var menuIcon = document.getElementById("menu-icon");
+    var height = header.clientHeight;
+    const listMenus = document.querySelectorAll(".nav-special");
+    const more = document.querySelector(".stopdefault");
+    menuIcon.onclick = function () {
+      var isclosed = header.clientHeight === height;
+      if (isclosed) {
+        header.style.height = "auto";
+      } else {
+        header.style.height = null;
+      }
+      for (const mlist of listMenus) {
+        mlist.onclick = function () {
+          header.style.height = null;
+        };
+      }
+    };
+    more.onclick = function (event) {
+      event.preventDefault();
+    };
+  </script>
+  <!-- end mobile-part -->
 </html>
